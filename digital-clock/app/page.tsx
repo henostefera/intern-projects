@@ -38,7 +38,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-cover bg-center" style={{ backgroundImage: 'url(/path/to/your/background.jpg)' }}>
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           <code className="font-mono font-bold">Digital Clock</code>
@@ -84,16 +84,24 @@ export default function Home() {
       </div>
 
       <style jsx>{`
+        main {
+          background-image: url('/path/to/your/background.jpg');
+          background-size: cover;
+          background-position: center;
+        }
+
         .clock-container {
           display: flex;
           justify-content: center;
           width: 100%;
           height: calc(100vh - 200px); /* Adjust height as needed */
           align-items: center;
+          color: white; /* Ensure text is readable on the background */
         }
 
         .clock {
           display: flex;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Improve text readability */
         }
 
         .clock div {
@@ -104,13 +112,13 @@ export default function Home() {
         .clock-time {
           width: 100px;
           height: 80px;
-          background: slateblue;
-          opacity: 0.8;
+          background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
           color: white;
           display: flex;
           justify-content: center;
           font-size: 50px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          align-items: center;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .text {
@@ -119,9 +127,11 @@ export default function Home() {
           align-items: center;
           text-transform: uppercase;
           letter-spacing: 2px;
-          background: darkblue;
-          opacity: 0.8;
+          background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
           color: white;
+          text-align: center;
+          padding: 2px 5px;
+          border-radius: 5px;
         }
 
         .clock-ampm {
@@ -130,8 +140,12 @@ export default function Home() {
           width: 60px;
           height: 30px;
           font-size: 20px;
-          background: green;
+          background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
           color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 5px;
         }
       `}</style>
     </main>
