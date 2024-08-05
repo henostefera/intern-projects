@@ -58,6 +58,8 @@ export default function Home() {
               width={100}
               height={24}
               priority
+              onScroll={teching the vertical lije'}
+              />
             />
           </a>
         </div>
